@@ -20,10 +20,10 @@ Andrew->>China: I am good thanks!
 ````
 will render the first example from the js-sequence website.
 
-Install:
+Install (to the `project/plugins.sbt`):
 ```
 resolvers += "jitpack" at "https://jitpack.io"
-libraryDependencies += "com.github.TeamWanari" % "sbt-paradox-diagrams" % "-SNAPSHOT"
+addSbtPlugin("com.github.TeamWanari" % "sbt-paradox-diagrams" % "-SNAPSHOT")
 ```
 
  
