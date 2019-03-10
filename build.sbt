@@ -23,3 +23,9 @@ publishM2 := {
 
 sbtPlugin := true
 publishMavenStyle := true
+
+import scala.collection.JavaConverters._
+scriptedLaunchOpts += ("-Dproject.version=" + version.value)
+scriptedLaunchOpts ++= java.lang.management.ManagementFactory.getRuntimeMXBean.getInputArguments.asScala.filter(
+  a => Seq("-Xmx", "-Xms", "-XX", "-Dfile").exists(a.startsWith)
+)

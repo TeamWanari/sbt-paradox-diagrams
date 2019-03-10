@@ -5,6 +5,8 @@ A simple paradox plugin, which will draw diagrams from formal definitions.
 
 Used libs:
  - https://bramp.github.io/js-sequence-diagrams/
+ - http://flowchart.js.org/
+ - https://mermaidjs.github.io/
  
  
 Example:
@@ -18,7 +20,9 @@ Andrew->>China: I am good thanks!
 ```
 @@@ 
 ````
-will render the first example from the js-sequence website.
+will render the first example from the js-sequence website. 
+Also `flowchart-diagram` and `mermaid-diagram` works. 
+For more information visit the listed sites.
 
 Install (to the `project/plugins.sbt`):
 ```
@@ -28,8 +32,5 @@ addSbtPlugin("com.github.TeamWanari" % "sbt-paradox-diagrams" % "-SNAPSHOT")
 
  
 TODO:
- - add tests
- - add flowchart http://flowchart.js.org/
  - add dot and railroad, idea from: https://github.com/francoislaberge/diagrams
- - add mermaid https://mermaidjs.github.io/
  - release on maven
