@@ -31,5 +31,6 @@ object SequenceDiagramPlugin extends AutoPlugin {
     sequenceDiagramParadoxGlobalSettings ++ inConfig(config)(
       Seq(
         // scoped settings here
-      ))
+      )
+    )
 }

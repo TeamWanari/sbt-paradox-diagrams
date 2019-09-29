@@ -6,11 +6,8 @@ import com.lightbend.paradox.markdown.ContainerBlockDirective
 import org.pegdown.Printer
 import org.pegdown.ast.{DirectiveNode, Visitor}
 
-class MermaidDiagramDirective
-    extends ContainerBlockDirective("mermaid-diagram") {
-  override def render(node: DirectiveNode,
-                      visitor: Visitor,
-                      printer: Printer): Unit = {
+class MermaidDiagramDirective extends ContainerBlockDirective("mermaid-diagram") {
+  override def render(node: DirectiveNode, visitor: Visitor, printer: Printer): Unit = {
 
     val id = s"diagram-${UUID.randomUUID.toString.take(8)}"
 
@@ -33,8 +30,7 @@ class MermaidDiagramDirective
 
   def renderScriptTags(printer: Printer) = {
     printer
-      .print(
-        """<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>""")
+      .print("""<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>""")
       .println
   }
 

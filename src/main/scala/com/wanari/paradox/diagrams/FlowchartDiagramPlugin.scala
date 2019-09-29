@@ -31,5 +31,6 @@ object FlowchartDiagramPlugin extends AutoPlugin {
     flowchartDiagramParadoxGlobalSettings ++ inConfig(config)(
       Seq(
         // scoped settings here
-      ))
+      )
+    )
 }

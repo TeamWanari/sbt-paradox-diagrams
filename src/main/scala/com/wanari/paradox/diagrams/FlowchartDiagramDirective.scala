@@ -6,11 +6,8 @@ import com.lightbend.paradox.markdown.ContainerBlockDirective
 import org.pegdown.Printer
 import org.pegdown.ast.{DirectiveNode, Visitor}
 
-class FlowchartDiagramDirective
-    extends ContainerBlockDirective("flowchart-diagram") {
-  override def render(node: DirectiveNode,
-                      visitor: Visitor,
-                      printer: Printer): Unit = {
+class FlowchartDiagramDirective extends ContainerBlockDirective("flowchart-diagram") {
+  override def render(node: DirectiveNode, visitor: Visitor, printer: Printer): Unit = {
 
     val id = s"diagram-${UUID.randomUUID.toString.take(8)}"
 
@@ -38,12 +35,10 @@ class FlowchartDiagramDirective
 
   def renderScriptTags(printer: Printer) = {
     printer
-      .print(
-        """<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>""")
+      .print("""<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>""")
       .println
     printer
-      .print(
-        """<script src="https://flowchart.js.org/flowchart-latest.js"></script>""")
+      .print("""<script src="https://flowchart.js.org/flowchart-latest.js"></script>""")
       .println
   }
 

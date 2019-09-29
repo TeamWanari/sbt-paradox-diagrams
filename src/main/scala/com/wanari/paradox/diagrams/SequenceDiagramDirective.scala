@@ -6,11 +6,8 @@ import com.lightbend.paradox.markdown.ContainerBlockDirective
 import org.pegdown.Printer
 import org.pegdown.ast.{DirectiveNode, Visitor}
 
-class SequenceDiagramDirective
-    extends ContainerBlockDirective("seqence-diagram") {
-  override def render(node: DirectiveNode,
-                      visitor: Visitor,
-                      printer: Printer): Unit = {
+class SequenceDiagramDirective extends ContainerBlockDirective("seqence-diagram") {
+  override def render(node: DirectiveNode, visitor: Visitor, printer: Printer): Unit = {
 
     val id = s"diagram-${UUID.randomUUID.toString.take(8)}"
 
@@ -38,20 +35,16 @@ class SequenceDiagramDirective
 
   def renderScriptTags(printer: Printer) = {
     printer
-      .print(
-        """<script src="https://bramp.github.io/js-sequence-diagrams/js/webfont.js"></script>""")
+      .print("""<script src="https://bramp.github.io/js-sequence-diagrams/js/webfont.js"></script>""")
       .println
     printer
-      .print(
-        """<script src="https://bramp.github.io/js-sequence-diagrams/js/snap.svg-min.js"></script>""")
+      .print("""<script src="https://bramp.github.io/js-sequence-diagrams/js/snap.svg-min.js"></script>""")
       .println
     printer
-      .print(
-        """<script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>""")
+      .print("""<script src="https://bramp.github.io/js-sequence-diagrams/js/underscore-min.js"></script>""")
       .println
     printer
-      .print(
-        """<script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>""")
+      .print("""<script src="https://bramp.github.io/js-sequence-diagrams/js/sequence-diagram-min.js"></script>""")
       .println
   }
 

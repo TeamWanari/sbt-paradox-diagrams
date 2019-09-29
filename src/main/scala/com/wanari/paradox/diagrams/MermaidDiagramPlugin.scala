@@ -31,5 +31,6 @@ object MermaidDiagramPlugin extends AutoPlugin {
     mermaidDiagramParadoxGlobalSettings ++ inConfig(config)(
       Seq(
         // scoped settings here
-      ))
+      )
+    )
 }
