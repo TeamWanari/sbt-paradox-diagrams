@@ -1,12 +1,6 @@
-@@@ sequence-diagram
-```raw
-Andrew->China: Says Hello
-Note right of China: China thinks about it
-China-->Andrew: How are you?
-Andrew->>China: I am good thanks!
-```
-@@@
+### Flow Chart Diagram
 
+<!-- #flow -->
 @@@ flowchart-diagram
 ```raw
 st=>start: Start:>http://www.google.com[blank]
@@ -25,12 +19,4 @@ para(path1, bottom)->sub1(right)->op1
 para(path2, top)->op1
 ```
 @@@
-
-@@@ mermaid-diagram
-```raw
-graph LR
-  A --- B
-  B-->C[fa:fa-ban forbidden]
-  B-->D(fa:fa-spinner ok);
-```
-@@@
+<!-- #flow -->
