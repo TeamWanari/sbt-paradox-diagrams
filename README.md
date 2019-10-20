@@ -16,7 +16,7 @@ addSbtPlugin("com.wanari" % "sbt-paradox-diagrams" % "<current-version>")
  
 ## Example
 ````
-@@@ seqence-diagram
+@@@ sequence-diagram
 ```raw
 Andrew->China: Says Hello
 Note right of China: China thinks about it
