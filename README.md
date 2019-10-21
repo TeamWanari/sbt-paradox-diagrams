@@ -1,5 +1,9 @@
 # sbt-paradox-diagrams
 
+[![Build Status](https://travis-ci.org/TeamWanari/sbt-paradox-diagrams.svg?branch=master)](https://travis-ci.org/TeamWanari/sbt-paradox-diagrams)
+[![Latest version](https://index.scala-lang.org/TeamWanari/sbt-paradox-diagrams/latest.svg)](https://index.scala-lang.org/TeamWanari/sbt-paradox-diagrams)
+[![Documentation](https://img.shields.io/badge/-Documatation-blue)](https://teamwanari.github.io/sbt-paradox-diagrams)
+
 A simple paradox plugin, which will draw diagrams from formal definitions.
 
 ## Supported Diagram Types
