@@ -39,6 +39,14 @@ scmInfo := Some(
     "scm:git@github.com:TeamWanari/sbt-paradox-diagrams.git"
   )
 )
+developers := List(
+  Developer(
+    "tg44",
+    "Gergo Torcsvari",
+    "torcsvari.gergo@gmail.com",
+    url("https://github.com/tg44")
+  )
+)
 
 publishM2 := {
   publishM2.value
