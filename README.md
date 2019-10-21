@@ -2,16 +2,21 @@
 
 A simple paradox plugin, which will draw diagrams from formal definitions.
 
+## Supported Diagram Types
+ - Sequence Diagrams (via https://bramp.github.io/js-sequence-diagrams)
+ - FlowCharts (via http://flowchart.js.org)
+ - Gantt and others (via https://mermaidjs.github.io)
 
-Used libs:
- - https://bramp.github.io/js-sequence-diagrams/
- - http://flowchart.js.org/
- - https://mermaidjs.github.io/
+## Setup
+
+Add the following lines to your `project/plugins.sbt`:
+```
+addSbtPlugin("com.wanari" % "sbt-paradox-diagrams" % "<current-version>")
+```
  
- 
-Example:
+## Example
 ````
-@@@ seqence-diagram
+@@@ sequence-diagram
 ```raw
 Andrew->China: Says Hello
 Note right of China: China thinks about it
@@ -20,17 +25,5 @@ Andrew->>China: I am good thanks!
 ```
 @@@ 
 ````
-will render the first example from the js-sequence website. 
-Also `flowchart-diagram` and `mermaid-diagram` works. 
-For more information visit the listed sites.
 
-Install (to the `project/plugins.sbt`):
-```
-resolvers += "jitpack" at "https://jitpack.io"
-addSbtPlugin("com.github.TeamWanari" % "sbt-paradox-diagrams" % "-SNAPSHOT")
-```
-
- 
-TODO:
- - add dot and railroad, idea from: https://github.com/francoislaberge/diagrams
- - release on maven
+see the [docs](docs) for more examples.

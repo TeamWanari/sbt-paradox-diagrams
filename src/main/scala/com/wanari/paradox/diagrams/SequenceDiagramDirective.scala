@@ -6,7 +6,7 @@ import com.lightbend.paradox.markdown.ContainerBlockDirective
 import org.pegdown.Printer
 import org.pegdown.ast.{DirectiveNode, Visitor}
 
-class SequenceDiagramDirective extends ContainerBlockDirective("seqence-diagram") {
+class SequenceDiagramDirective extends ContainerBlockDirective("sequence-diagram") {
   override def render(node: DirectiveNode, visitor: Visitor, printer: Printer): Unit = {
 
     val id = s"diagram-${UUID.randomUUID.toString.take(8)}"
