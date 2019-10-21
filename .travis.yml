@@ -18,6 +18,9 @@ jobs:
       deploy:
         provider: script
         script: sbt ci-release ghpagesPushSite
+        on:
+          all_branches: true
+          condition: "$TRAVIS_TAG =~ ^v.*$"
 
 before_deploy:
   # Record minimal build information via the Git user ident
