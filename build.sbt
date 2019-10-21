@@ -31,14 +31,6 @@ releaseProcess := Seq[ReleaseStep](
   pushChanges
 )
 
-publishTo := Some(
-  if (isSnapshot.value)
-    Opts.resolver.sonatypeSnapshots
-  else
-    Opts.resolver.sonatypeStaging
-)
-
-publishMavenStyle := true
 licenses := Seq("APL2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 homepage := Some(url("https://github.com/TeamWanari/sbt-paradox-diagrams"))
 scmInfo := Some(
