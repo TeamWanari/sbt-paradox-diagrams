@@ -1,5 +1,32 @@
 language: scala
 sbt_args: "-J-Xmx2G"
 
-script:
-  - sbt clean scripted
+before_install:
+  - git fetch --tags
+
+stages:
+  - name: test
+  - name: release
+    if: ((branch = master AND type = push) OR (tag IS present)) AND NOT fork
+
+jobs:
+  include:
+    - name: test
+      script: sbt clean scripted makeSite
+    # run ci-release only if previous stages passed
+    - stage: release
+      deploy:
+        provider: script
+        script: sbt ci-release ghpagesPushSite
+
+before_deploy:
+  # Record minimal build information via the Git user ident
+  - git config --global user.name "$USER"
+  - git config --global user.email "$TRAVIS_BUILD_NUMBER@$TRAVIS_COMMIT"
+  # Decrypt the secret deploy key using instructions from `travis encrypt-file`
+  - openssl aes-256-cbc -K $encrypted_1798d31f9161_key -iv $encrypted_1798d31f9161_iv -in project/travis-deploy-key.enc -out project/travis-deploy-key -d
+  - chmod 600 project/travis-deploy-key
+  # Start ssh-agent in the background and load the deploy key
+  - eval "$(ssh-agent -s)"
+  - ssh-add project/travis-deploy-key
+
