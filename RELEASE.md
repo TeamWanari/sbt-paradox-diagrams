@@ -1,49 +1,12 @@
 ## Release to Maven Central
 
-### Requirements
+Automatic library release and documentation release added to the project.
 
-You created the JIRA and Nexus user and the ticket for your group id
-as explained in https://central.sonatype.org/pages/ossrh-guide.html
+All of the commits merged to the master branch will go to the sonatype snapshot repository, as a version.
 
-Add the credentials for the Sonatype plugin:
-
-```
-$HOME/.sbt/(sbt-version 0.13 or 1.0)/sonatype.sbt
-```
-
-should contain
+All of the tags pushed will go to the sonatype releases.
 
 ```
-credentials += Credentials("Sonatype Nexus Repository Manager",
-        "oss.sonatype.org",
-        "(Sonatype user name)",
-        "(Sonatype password)")
+git tag -a v0.1.0 -m "v0.1.0"
+git push origin v0.1.0
 ```
-
-Make sure you pushed everything to the remote before releasing.
-
-### Run
-Execute
-
-    sbt "release"
-
-Which will:
- 1. Compare the local git status with the remote (should be same)
- 1. Compile
- 1. Test
- 1. Publish to Central
- 1. Close the release in the Sonatype OSS Nexus
- 1. Create a git tag
- 1. Bump up the version with a commit
- 1. Push the new master to the remote
-
-The release might enter a loop under certain circumstances (in cross-release at least). Just exist after the push.
-
-Update Docs
-===========
-
-```
-git checkout v<released_version>
-sbt ghpagesPushSite
-```
-
