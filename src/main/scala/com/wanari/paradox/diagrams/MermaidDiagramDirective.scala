@@ -30,7 +30,7 @@ class MermaidDiagramDirective extends ContainerBlockDirective("mermaid-diagram")
 
   def renderScriptTags(printer: Printer) = {
     printer
-      .print("""<script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>""")
+      .print("""<script src="https://unpkg.com/mermaid@8.8.2/dist/mermaid.min.js"></script>""")
       .println
   }
 
