@@ -2,7 +2,7 @@ import sbt.url
 import sbtrelease.ReleaseStateTransformations._
 
 enablePlugins(SbtPlugin)
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.9.1")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.9.2")
 
 name := "sbt-paradox-diagrams"
 organization := "com.wanari"
