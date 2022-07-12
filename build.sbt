@@ -2,13 +2,13 @@ import sbt.url
 import sbtrelease.ReleaseStateTransformations._
 
 enablePlugins(SbtPlugin)
-addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.9.2")
+addSbtPlugin("com.lightbend.paradox" % "sbt-paradox" % "0.10.2")
 
 name := "sbt-paradox-diagrams"
 organization := "com.wanari"
 organizationName := "Wanari Ltd."
 
-scalaVersion := "2.12.15"
+scalaVersion := "2.12.16"
 
 scalafmtOnCompile := true
 
@@ -51,14 +51,16 @@ developers := List(
 publishM2 := {
   publishM2.value
 
-  val d = file(sys.env("HOME")) / s".m2/repository/com/wanari/sbt-paradox-diagrams_${scalaBinaryVersion.value}_${sbtBinaryVersion.value}"
+  val d = file(
+    sys.env("HOME")
+  ) / s".m2/repository/com/wanari/sbt-paradox-diagrams_${scalaBinaryVersion.value}_${sbtBinaryVersion.value}"
   d.renameTo(file(sys.env("HOME")) / ".m2/repository/com/wanari/sbt-paradox-diagrams")
 }
 
 import scala.collection.JavaConverters._
 scriptedLaunchOpts += ("-Dproject.version=" + version.value)
-scriptedLaunchOpts ++= java.lang.management.ManagementFactory.getRuntimeMXBean.getInputArguments.asScala.filter(
-  a => Seq("-Xmx", "-Xms", "-XX", "-Dfile").exists(a.startsWith)
+scriptedLaunchOpts ++= java.lang.management.ManagementFactory.getRuntimeMXBean.getInputArguments.asScala.filter(a =>
+  Seq("-Xmx", "-Xms", "-XX", "-Dfile").exists(a.startsWith)
 )
 
 lazy val debugScripted = if (sys.env.getOrElse("DEBUG_SCRIPTED", "false").toBoolean) {
