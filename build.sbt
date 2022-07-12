@@ -8,7 +8,7 @@ name := "sbt-paradox-diagrams"
 organization := "com.wanari"
 organizationName := "Wanari Ltd."
 
-scalaVersion := "2.12.16"
+scalaVersion := "2.13.8"
 
 scalafmtOnCompile := true
 
